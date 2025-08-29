@@ -1,67 +1,60 @@
 # Full Stack REST API – VIT Submission
 
-## Project Overview
-This project is a REST API built with Node.js and deployed as a Vercel serverless function.
-It accepts an array via a POST request and returns processed information including odd/even numbers, alphabets, special characters, sum, and a concatenated string in alternating caps.
+A serverless REST API built with Node.js and deployed on Vercel. This API processes an array sent via a POST request and returns categorized data including odd/even numbers, alphabets, special characters, sum of numbers, and a concatenated string with alternating caps.
 
----
+## 🚀 Live Demo / API Endpoint
 
-## API Endpoint
-Method: POST  
-Route: /bfhl  
+POST Route: /bfhl  
 Deployed URL: https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
 
-Request Body Format:
-{
-  "data": [1, 2, "hello", "@", 5, "world"]
-}
+> Note: This is a serverless API hosted on Vercel. You can test it using a POST request with JSON data.
 
----
+## 📁 Project Structure
 
-## Response Format
-{
-  "is_success": true,
-  "user_id": "ashish_khatri_01012000",
-  "email": "44234ashish@gmail.com",
-  "roll_number": "ABCD123",
-  "odd_numbers": ["1","5"],
-  "even_numbers": ["2"],
-  "alphabets": ["HELLO","WORLD"],
-  "special_characters": ["@"],
-  "sum": "8",
-  "concat_string": "DlRoWoLlEh"
-}
+full-stack-api/
+├── api/               # Serverless API functions
+│   └── bfhl.js        # Main API endpoint logic
+├── package.json       # Node.js dependencies
+└── README.md          # Project documentation
 
-Notes:
-- user_id format: {full_name_ddmmyyyy} (full name in lowercase)
-- Numbers in the arrays are returned as strings
-- concat_string concatenates all alphabetical characters in reverse order with alternating caps
+## 🛠️ Technologies Used
 
----
+- Backend / API:
+  - Node.js
+  - JavaScript
+  - Vercel (Serverless deployment)
 
-## Technology Stack
-- Node.js (JavaScript)
-- Vercel (Serverless hosting for REST API)
+## ⚙️ Setup Instructions (Local Testing)
 
----
-
-## Setup Instructions (For Local Testing)
-1. Clone the repository:
+1. Clone the Repository:
    git clone <your-repo-url>
    cd project-root
 
-2. Install dependencies:
+2. Install Dependencies:
    npm install
 
-3. Run the API locally (optional):
+3. Run the API Locally (Optional):
    vercel dev
 
 4. Test the API:
-   curl -X POST "http://localhost:3000/api/bfhl" -H "Content-Type: application/json" -d '{"data": [1, 2, "hello", "@", 5, "world"]}'
+   curl -X POST "http://localhost:3000/api/bfhl" \
+   -H "Content-Type: application/json" \
+   -d '{"data": [1, 2, "hello", "@", 5, "world"]}'
 
----
+## 🧩 Features
 
-## Example Request & Response
+- Accepts an array via POST request
+- Categorizes array elements into:
+  - Odd numbers
+  - Even numbers
+  - Alphabets
+  - Special characters
+- Calculates sum of numeric elements
+- Returns concatenated alphabetical string in reverse order with alternating caps
+- Returns user details (user_id, email, roll_number) in response
+
+## 📦 Example Request & Response
+
 Request:
 { "data": ["a", "1", "334", "4", "R", "$"] }
 
@@ -79,7 +72,11 @@ Response:
   "concat_string": "Ra"
 }
 
----
+> Notes:
+> - user_id format: {full_name_ddmmyyyy} (all lowercase)
+> - Numbers in arrays are returned as strings
+> - concat_string combines all alphabetical characters in reverse order with alternating caps
 
-## Submission
-Use this Vercel API endpoint for submission: https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
+## 🐞 Known Issues
+
+- None reported. Fully functional as a serverless API.
