@@ -1,0 +1,25 @@
+# Ignore Node modules (will be installed by Vercel automatically)
+node_modules/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore archives
+*.tgz
+
+# Ignore git
+.git/
+.gitignore
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore dataset or large files (if any)
+data/
