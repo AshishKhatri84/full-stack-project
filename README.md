@@ -89,8 +89,7 @@ This project is a REST API built with Node.js and deployed as a Vercel serverles
    curl -X POST "https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl" -H "Content-Type: application/json" -d "{\"data\": [1, 2, \"hello\", \"@\", 5, \"world\"]}"
    ```
    **Note**: Go to Vercel Dashboard → Project Settings → Deployment Protection & Turn off "**Vercel Authentication**" (or add your machine’s IP to the allowlist).
-
-Then redeploy once (or just refresh, Vercel applies immediately).
+   Then redeploy once (or just refresh, Vercel applies immediately).
 
 ## 📝 Example Usage
 
