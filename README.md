@@ -91,6 +91,15 @@ This project is a REST API built with Node.js and deployed as a Vercel serverles
    **Note**: Go to Vercel Dashboard → Project Settings → Deployment Protection & Turn off "**Vercel Authentication**" (or add your machine’s IP to the allowlist).
    Then redeploy once (or just refresh, Vercel applies immediately).
 
+5. **Deploy with Vercel (Optional)**
+   If your project contains a large number of files, Vercel may reject the deployment.
+   __Invalid request:__ Files should NOT have more than 15000 items
+   In that case, use the archive option:
+   ```bash
+   vercel --prod --archive=tgz
+   ```
+  This compresses your project before deployment and avoids file count limits.
+
 ## 📝 Example Usage
 
 ### Sample Request
