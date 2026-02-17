@@ -24,7 +24,7 @@ A built-in **API Dashboard** is available on the root deployment page for live t
 
 ### 🌐 Dashboard (Recommended)
 
-🔗 https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
+🔗 [https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/](https://full-stack-project-three-mocha.vercel.app/)
 
 This page provides:
 
@@ -39,7 +39,7 @@ This page provides:
 ### 🔗 Direct API Endpoint
 
 ```
-POST https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
+[POST https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl](https://full-stack-project-three-mocha.vercel.app/)
 ```
 
 ---
