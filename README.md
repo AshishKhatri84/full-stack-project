@@ -23,7 +23,7 @@ A built-in **API Dashboard** is available on the root deployment page for live t
 
 ### 🌐 Dashboard (Recommended)
 
-🔗 [https://full-stack-project-three-mocha.vercel.app/](https://full-stack-project-three-mocha.vercel.app/)
+🔗 https://full-stack-project-three-mocha.vercel.app/
 
 This page provides:
 
@@ -107,8 +107,9 @@ The API can be tested in **three different ways**:
 
 Open:
 
-🔗 [https://full-stack-project-three-mocha.vercel.app/](https://full-stack-project-three-mocha.vercel.app/)
-
+```
+https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
+```
 
 Steps:
 
@@ -139,7 +140,9 @@ curl -X POST "https://full-stack-project-three-mocha.vercel.app/api/bfhl" -H "Co
 1. Set method to `POST`
 2. URL:
 
-🔗 [https://full-stack-project-three-mocha.vercel.app/](https://full-stack-project-three-mocha.vercel.app/)
+```
+https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
+```
 
 3. Header:
 
