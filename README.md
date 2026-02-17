@@ -107,9 +107,7 @@ The API can be tested in **three different ways**:
 
 Open:
 
-```
-https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
-```
+🔗 https://full-stack-project-three-mocha.vercel.app/
 
 Steps:
 
@@ -141,7 +139,7 @@ curl -X POST "https://full-stack-project-three-mocha.vercel.app/api/bfhl" -H "Co
 2. URL:
 
 ```
-https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
+https://full-stack-project-three-mocha.vercel.app/api/bfhl
 ```
 
 3. Header:
