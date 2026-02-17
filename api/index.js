@@ -2,113 +2,155 @@ export default function handler(req, res) {
   res.setHeader("Content-Type", "text/html");
 
   res.status(200).send(`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>BFHL API</title>
-      <style>
-        body {
-          margin: 0;
-          font-family: 'Segoe UI', sans-serif;
-          background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
+<!DOCTYPE html>
+<html>
+<head>
+<title>BFHL API Dashboard</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.container {
+  width: 800px;
+}
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+h1 {
+  margin-top: 0;
+}
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+textarea {
+  width: 100%;
+  height: 120px;
+  background: #0f172a;
+  color: white;
+  border: 1px solid #334155;
+  padding: 10px;
+  border-radius: 6px;
+}
+pre {
+  background: #0f172a;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.code {
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 13px;
+}
+</style>
+</head>
+<body>
+<div class="container">
 
-        .card {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          padding: 40px;
-          border-radius: 20px;
-          text-align: center;
-          width: 90%;
-          max-width: 500px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
+<div class="card">
+<h1>🚀 BFHL API Deployment</h1>
+<p>This API can be tested in <b>3 ways</b>:</p>
 
-        h1 {
-          margin-bottom: 10px;
-          font-size: 28px;
-        }
+<ul>
+<li><b>1. Built-in API Tester (below)</b></li>
+<li><b>2. Using Postman</b></li>
+<li><b>3. Using curl (Terminal)</b></li>
+</ul>
 
-        p {
-          opacity: 0.9;
-        }
+<p><b>Endpoint:</b></p>
+<div class="code" id="endpoint"></div>
+<button onclick="copyEndpoint()">Copy Endpoint</button>
 
-        .endpoint {
-          background: rgba(0,0,0,0.4);
-          padding: 12px;
-          border-radius: 8px;
-          margin-top: 20px;
-          font-family: monospace;
-          font-size: 14px;
-          word-break: break-all;
-        }
+<p><b>Sample JSON Body:</b></p>
+<div class="code" id="sampleJson"></div>
+<button onclick="copySample()">Copy Sample JSON</button>
 
-        .badge {
-          display: inline-block;
-          margin-top: 15px;
-          padding: 6px 12px;
-          border-radius: 20px;
-          background: #00c853;
-          font-size: 12px;
-          font-weight: bold;
-        }
+<p><b>curl Command:</b></p>
+<div class="code" id="curlCmd"></div>
+<button onclick="copyCurl()">Copy curl Command</button>
 
-        footer {
-          margin-top: 20px;
-          font-size: 12px;
-          opacity: 0.7;
-        }
+</div>
 
-        button {
-          margin-top: 20px;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 8px;
-          background: #00c853;
-          color: white;
-          font-weight: bold;
-          cursor: pointer;
-          transition: 0.3s;
-        }
+<div class="card">
+<h2>🧪 Built-in API Tester</h2>
 
-        button:hover {
-          background: #00e676;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="card">
-        <h1>🚀 BFHL API is Live</h1>
-        <p>Your serverless function is successfully deployed on Vercel.</p>
+<textarea id="input">
+{
+  "data": ["a","1","334","4","R","$"]
+}
+</textarea>
 
-        <div class="endpoint">
-          POST /api/bfhl
-        </div>
+<button onclick="sendRequest()">Send POST Request</button>
 
-        <div class="badge">Status: Online</div>
+<h3>Response:</h3>
+<pre id="output">Response will appear here...</pre>
+</div>
 
-        <button onclick="copyEndpoint()">Copy Endpoint</button>
+</div>
 
-        <footer>
-          Built by Ashish Khatri
-        </footer>
-      </div>
+<script>
+const endpoint = window.location.origin + "/api/bfhl";
+const sample = JSON.stringify({ data: ["a","1","334","4","R","$"] }, null, 2);
+const curl = \`curl -X POST \${endpoint} \\
+-H "Content-Type: application/json" \\
+-d '\${sample.replace(/\\n/g, "")}'\`;
 
-      <script>
-        function copyEndpoint() {
-          const text = window.location.origin + "/api/bfhl";
-          navigator.clipboard.writeText(text);
-          alert("Endpoint copied to clipboard!");
-        }
-      </script>
-    </body>
-    </html>
+document.getElementById("endpoint").textContent = endpoint;
+document.getElementById("sampleJson").textContent = sample;
+document.getElementById("curlCmd").textContent = curl;
+
+function copyEndpoint() {
+  navigator.clipboard.writeText(endpoint);
+  alert("Endpoint copied!");
+}
+
+function copySample() {
+  navigator.clipboard.writeText(sample);
+  alert("Sample JSON copied!");
+}
+
+function copyCurl() {
+  navigator.clipboard.writeText(curl);
+  alert("curl command copied!");
+}
+
+async function sendRequest() {
+  const input = document.getElementById("input").value;
+  const output = document.getElementById("output");
+
+  try {
+    const response = await fetch("/api/bfhl", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: input
+    });
+
+    const data = await response.json();
+    output.textContent = JSON.stringify(data, null, 2);
+  } catch (err) {
+    output.textContent = "Error: " + err.message;
+  }
+}
+</script>
+
+</body>
+</html>
   `);
 }
