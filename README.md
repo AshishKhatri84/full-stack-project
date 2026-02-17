@@ -81,93 +81,80 @@ This page provides:
 }
 ```
 
-------------------------------------------------------------------------
+
+---
 
 ## 📄 Response Field Descriptions
 
-  -----------------------------------------------------------------------
-  Field                      Description
-  -------------------------- --------------------------------------------
-  `is_success`               Boolean indicating successful processing
+| Field | Description |
+|-------|------------|
+| `is_success` | Boolean indicating successful processing |
+| `user_id` | Format: `{full_name_ddmmyyyy}` (lowercase) |
+| `email` | Student email address |
+| `roll_number` | Student roll number |
+| `odd_numbers` | Array of odd numbers as strings |
+| `even_numbers` | Array of even numbers as strings |
+| `alphabets` | Array of alphabetical strings (uppercase) |
+| `special_characters` | Array of special characters |
+| `sum` | Sum of all numeric values as string |
+| `concat_string` | Alphabetical characters in reverse order with alternating caps |
 
-  `user_id`                  Format: `{full_name_ddmmyyyy}` (lowercase)
-
-  `email`                    Student email address
-
-  `roll_number`              Student roll number
-
-  `odd_numbers`              Array of odd numbers as strings
-
-  `even_numbers`             Array of even numbers as strings
-
-  `alphabets`                Array of alphabetical strings (uppercase)
-
-  `special_characters`       Array of special characters
-
-  `sum`                      Sum of all numeric values as string
-
-  `concat_string`            Alphabetical characters in reverse order
-                             with alternating caps
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 ## 🧪 Testing the API
 
 The API can be tested in **three different ways**:
 
-------------------------------------------------------------------------
-
 ### 1️⃣ Using Built-in Dashboard (Recommended)
 
 Open:
 
-    https://full-stack-project-three-mocha.vercel.app/
+```
+https://full-stack-project-three-mocha.vercel.app/api/bfhl
+```
 
 Steps:
 
--   Enter JSON input\
--   Click **"Send POST Request"**\
--   View response directly on the page
+- Enter JSON input  
+- Click **"Send POST Request"**  
+- View response directly on the page  
 
-------------------------------------------------------------------------
+---
 
 ### 2️⃣ Using cURL
 
 #### 🐧 Linux / macOS
 
-``` bash
+```bash
 curl -X POST "https://full-stack-project-three-mocha.vercel.app/api/bfhl"   -H "Content-Type: application/json"   -d '{"data": [1, 2, "hello", "@", 5, "world"]}'
 ```
 
 #### 🪟 Windows Command Prompt
 
-``` bash
+```bash
 curl -X POST "https://full-stack-project-three-mocha.vercel.app/api/bfhl" -H "Content-Type: application/json" -d "{\"data\": [1, 2, \"hello\", \"@\", 5, \"world\"]}"
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 3️⃣ Using Postman
 
-1.  Set method to `POST`
-2.  URL:
+1. Set method to `POST`
+2. URL:
 
-```{=html}
-<!-- -->
 ```
-    https://full-stack-project-three-mocha.vercel.app/api/bfhl
-
-3.  Header:
-
-```{=html}
-<!-- -->
+https://full-stack-project-three-mocha.vercel.app/api/bfhl
 ```
-    Content-Type: application/json
 
-4.  Body (raw JSON):
+3. Header:
 
-``` json
+```
+Content-Type: application/json
+```
+
+4. Body (raw JSON):
+
+```json
 {
   "data": [1, 2, "hello", "@", 5, "world"]
 }
