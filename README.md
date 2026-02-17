@@ -1,3 +1,4 @@
+
 # 🚀 Full Stack REST API – VIT Submission
 
 ---
@@ -19,9 +20,9 @@ A built-in **API Dashboard** is available on the root deployment page for live t
 
 ---
 
-# 🚀 Live Deployment
+## 🚀 Live Deployment
 
-## 🌐 Dashboard (Recommended)
+### 🌐 Dashboard (Recommended)
 
 🔗 https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
 
@@ -35,16 +36,17 @@ This page provides:
 
 ---
 
-## 🔗 Direct API Endpoint
+### 🔗 Direct API Endpoint
 
+```
 POST https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
-
+```
 
 ---
 
-# 📋 API Documentation
+## 📋 API Documentation
 
-## Endpoint Details
+### 🔹 Endpoint Details
 
 - **Method:** `POST`
 - **Route:** `/api/bfhl`
@@ -52,13 +54,19 @@ POST https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
 
 ---
 
-# 📥 Request Format
+## 📥 Request Format
 
 ```json
 {
   "data": [1, 2, "hello", "@", 5, "world"]
 }
-📤 Response Format
+```
+
+---
+
+## 📤 Response Format
+
+```json
 {
   "is_success": true,
   "user_id": "ashish_khatri_01012000",
@@ -71,55 +79,93 @@ POST https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
   "sum": "8",
   "concat_string": "DlRoWoLlEh"
 }
-📄 Response Field Descriptions
-Field	Description
-is_success	Boolean indicating successful processing
-user_id	Format: {full_name_ddmmyyyy} (lowercase)
-email	Student email address
-roll_number	Student roll number
-odd_numbers	Array of odd numbers as strings
-even_numbers	Array of even numbers as strings
-alphabets	Array of alphabetical strings (uppercase)
-special_characters	Array of special characters
-sum	Sum of all numeric values as string
-concat_string	Alphabetical characters in reverse order with alternating caps
-🧪 Testing the API
-The API can be tested in three different ways:
+```
 
-1️⃣ Using Built-in Dashboard (Recommended)
+---
+
+## 📄 Response Field Descriptions
+
+| Field | Description |
+|-------|------------|
+| `is_success` | Boolean indicating successful processing |
+| `user_id` | Format: `{full_name_ddmmyyyy}` (lowercase) |
+| `email` | Student email address |
+| `roll_number` | Student roll number |
+| `odd_numbers` | Array of odd numbers as strings |
+| `even_numbers` | Array of even numbers as strings |
+| `alphabets` | Array of alphabetical strings (uppercase) |
+| `special_characters` | Array of special characters |
+| `sum` | Sum of all numeric values as string |
+| `concat_string` | Alphabetical characters in reverse order with alternating caps |
+
+---
+
+## 🧪 Testing the API
+
+The API can be tested in **three different ways**:
+
+---
+
+### 1️⃣ Using Built-in Dashboard (Recommended)
+
 Open:
 
+```
 https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/
+```
+
 Steps:
 
-Enter JSON input
+- Enter JSON input  
+- Click **"Send POST Request"**  
+- View response directly on the page  
 
-Click "Send POST Request"
+---
 
-View response directly on the page
+### 2️⃣ Using cURL
 
-2️⃣ Using cURL
-🐧 Linux / macOS
-curl -X POST "https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl" \
-  -H "Content-Type: application/json" \
-  -d '{"data": [1, 2, "hello", "@", 5, "world"]}'
-🪟 Windows Command Prompt
+#### 🐧 Linux / macOS
+
+```bash
+curl -X POST "https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl"   -H "Content-Type: application/json"   -d '{"data": [1, 2, "hello", "@", 5, "world"]}'
+```
+
+#### 🪟 Windows Command Prompt
+
+```bash
 curl -X POST "https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl" -H "Content-Type: application/json" -d "{\"data\": [1, 2, \"hello\", \"@\", 5, \"world\"]}"
-3️⃣ Using Postman
-Set method to POST
+```
 
-URL:
+---
 
+### 3️⃣ Using Postman
+
+1. Set method to `POST`
+2. URL:
+
+```
 https://full-stack-ndi2meuzg-ashishkhatri84s-projects.vercel.app/api/bfhl
-Header:
+```
 
+3. Header:
+
+```
 Content-Type: application/json
-Body (raw JSON):
+```
 
+4. Body (raw JSON):
+
+```json
 {
   "data": [1, 2, "hello", "@", 5, "world"]
 }
-🏗️ Project Structure
+```
+
+---
+
+## 🏗️ Project Structure
+
+```
 project-root/
 ├── api/
 │   ├── bfhl.js      # Main API endpoint
@@ -127,62 +173,84 @@ project-root/
 ├── package.json
 ├── vercel.json
 └── README.md
-🛠️ Technology Stack
-Backend: Node.js (JavaScript)
+```
 
-Hosting: Vercel (Serverless Functions)
+---
 
-API Type: REST API
+## 🛠️ Technology Stack
 
-Architecture: Serverless
+- **Backend:** Node.js (JavaScript)
+- **Hosting:** Vercel (Serverless Functions)
+- **API Type:** REST API
+- **Architecture:** Serverless
 
-🔧 Local Development Setup
-📌 Prerequisites
-Node.js (v14 or higher)
+---
 
-npm or yarn
+## 🔧 Local Development Setup
 
-Vercel CLI (optional)
+### 📌 Prerequisites
 
-⚙️ Installation Steps
-1️⃣ Clone the repository
+- Node.js (v14 or higher)
+- npm or yarn
+- Vercel CLI (optional)
+
+---
+
+### ⚙️ Installation Steps
+
+#### 1️⃣ Clone the repository
+
+```bash
 git clone <your-repo-url>
 cd project-root
-2️⃣ Install dependencies
+```
+
+#### 2️⃣ Install dependencies
+
+```bash
 npm install
-3️⃣ Run locally
+```
+
+#### 3️⃣ Run locally
+
+```bash
 vercel dev
-4️⃣ Deploy manually (optional)
+```
+
+#### 4️⃣ Deploy manually (optional)
+
+```bash
 vercel --prod
-📊 Algorithm Logic
-Accept array of mixed data types
+```
 
-Separate numbers, alphabets, and special characters
+---
 
-Classify numbers into odd and even
+## 📊 Algorithm Logic
 
-Calculate total sum
+1. Accept array of mixed data types  
+2. Separate numbers, alphabets, and special characters  
+3. Classify numbers into odd and even  
+4. Calculate total sum  
+5. Reverse alphabetical characters  
+6. Apply alternating capitalization  
+7. Return structured JSON response  
 
-Reverse alphabetical characters
+---
 
-Apply alternating capitalization
+## 🚀 Deployment
 
-Return structured JSON response
-
-🚀 Deployment
-This project is deployed on Vercel using serverless functions.
+This project is deployed on **Vercel using serverless functions**.
 
 The deployment automatically handles:
 
-⚡ Serverless scaling
+- ⚡ Serverless scaling  
+- 🌍 Global CDN distribution  
+- 🔐 Automatic HTTPS  
+- 🔄 Instant redeploy on GitHub push  
+- 🧩 Zero server maintenance  
 
-🌍 Global CDN distribution
+---
 
-🔐 Automatic HTTPS
+## 📄 License
 
-🔄 Instant redeploy on GitHub push
-
-🧩 Zero server maintenance
-
-📄 License
-This project is created for VIT Full Stack Submission purposes.
+This project is created for **VIT Full Stack Submission purposes**.
