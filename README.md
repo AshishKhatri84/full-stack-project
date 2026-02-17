@@ -23,7 +23,7 @@ A built-in **API Dashboard** is available on the root deployment page for live t
 
 ### 🌐 Dashboard (Recommended)
 
-🔗 https://full-stack-project-three-mocha.vercel.app/api/bfhl
+🔗 https://full-stack-project-three-mocha.vercel.app/
 
 This page provides:
 
